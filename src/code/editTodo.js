@@ -1,5 +1,5 @@
-import todolist from "./todos";
-import todoDom from "./domCreator";
+import {todolist} from "./todos";
+import {todoDom, creatorFormDom} from "./domCreator";
 
 function removeTodo() {
 
