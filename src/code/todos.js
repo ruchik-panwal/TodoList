@@ -1,6 +1,5 @@
-function todolist() {
 
-    todos = [
+    let todos = [
         {
             title: "title",
             description: "lorem ipsum bhosda",
@@ -27,6 +26,8 @@ function todolist() {
         }
     ]
 
+
+function todolist() {
     return todos;
 }
 
