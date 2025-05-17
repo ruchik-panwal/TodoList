@@ -1,5 +1,5 @@
-import {todolist} from "./todos";
-import {todoDom, creatorFormDom} from "./domCreator";
+import { todolist } from "./todos";
+import { todoDom, creatorFormDom } from "./domCreator";
 
 function removeTodo() {
 
@@ -19,4 +19,47 @@ function removeTodo() {
 
 }
 
-export default removeTodo;
+function createTodo() {
+
+    const createBtn = document.querySelector(".createBtn"); //Selecting Submit Button
+    const inputs = document.querySelectorAll("input"); //Selecting input fields
+
+    // Creating a temporary object so to update and append to the todo array
+    const tempObj = {
+        Title: "",
+        Description: "",
+        DueDate: "",
+        Priority: 1,
+        status: 0,
+        project: "default"
+    };
+
+    // storing array reference to this variable
+    let todoArr = todolist();
+
+    // Doing things when Clicked
+    createBtn.addEventListener('click', (e) => {
+
+        e.preventDefault(); //Prevents page reloading
+
+        // Going through tempObj to update properties 
+        for (const element in tempObj) {
+
+            // going through every input
+            inputs.forEach((input) => {
+                if (element == input.id) tempObj[element] = input.value; //ex if(Title == Title) tempObj[Title] = inputValue
+            });
+        }
+
+        todoArr.push(tempObj); //Pushing the Object in the array
+        
+        // Reloading shit
+        todoDom();
+        createTodo();
+        removeTodo();
+
+    });
+
+}
+
+export { removeTodo, createTodo };
