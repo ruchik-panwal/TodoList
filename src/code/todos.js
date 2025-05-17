@@ -61,4 +61,4 @@ function formInput(){
     return forminputs;
 }
 
-export default todolist;
+export {todolist,formInput};
