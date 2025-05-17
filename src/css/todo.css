@@ -1,0 +1,19 @@
+/* temporary */
+
+body{
+    background-color: gray;
+}
+
+/* Permanent */
+
+.todosWrapper{
+
+    margin: 10px;
+    background-color: palevioletred;
+}
+
+.todoDiv{
+
+    margin: 5px;
+    background-color: goldenrod;
+}
