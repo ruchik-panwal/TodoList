@@ -92,6 +92,7 @@ function creatorFormDom() {
 
     // Creating and appending a Submit Button 
     const createBtn = document.createElement("button");
+    createBtn.className = "createBtn";
     createBtn.type = "submit";
     createBtn.textContent = "Create";
     creatorForm.appendChild(createBtn);
