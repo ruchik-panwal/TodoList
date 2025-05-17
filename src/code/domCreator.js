@@ -8,12 +8,19 @@ function todoDom() {
     const todosWrapper = document.createElement("div"); //This will contain every todos
     todosWrapper.className = "todosWrapper";
 
+    // adding a counter
+    let count = 0
+
+    //storing the reference of array to a variable 
+    let todoArr = todolist();
+
     // Going through the todo array to create dom for every element
-    todolist().forEach((todo) => {
+    todoArr.forEach((todo) => {
 
         // wrapper for single todos
         const todoDiv = document.createElement("div");
         todoDiv.className = "todoDiv";
+        todoDiv.id = "x" + count++; //This gives every todo div the index of its og object
 
         // going through the single todo object to create dom for all the properties
         for (const type in todo) {
