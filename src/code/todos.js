@@ -1,26 +1,26 @@
 
 let todos = [
     {
-        title: "title",
-        description: "lorem ipsum bhosda",
-        duedate: "22-02-20",
-        priority: 1,
+        Title: "Title",
+        Description: "lorem ipsum bhosda",
+        DueDate: "22-02-20",
+        Priority: 1,
         status: 0,
         project: "default"
     },
     {
-        title: "Linkedin Post",
-        description: "IDEA Heckathon linkedin post",
-        duedate: "17-05-25",
-        priority: 1,
+        Title: "Linkedin Post",
+        Description: "IDEA Heckathon linkedin post",
+        DueDate: "17-05-25",
+        Priority: 1,
         status: 0,
         project: "default"
     },
     {
-        title: "DSA",
-        description: "DSA Karle bhai varna job nahi milega",
-        duedate: "22-02-20",
-        priority: 1,
+        Title: "DSA",
+        Description: "DSA Karle bhai varna job nahi milega",
+        DueDate: "22-02-20",
+        Priority: 1,
         status: 0,
         project: "default"
     }
@@ -36,11 +36,11 @@ let forminputs = [
     {
         name: "Description",
         type: "text",
-        placeholder: "Add a description...",
+        placeholder: "Add a Description...",
         required: false
     },
     {
-        name: "Due Date",
+        name: "DueDate",
         type: "date",
         placeholder: "",
         required: true
@@ -61,4 +61,4 @@ function formInput(){
     return forminputs;
 }
 
-export {todolist,formInput};
+export  {todolist,formInput};
