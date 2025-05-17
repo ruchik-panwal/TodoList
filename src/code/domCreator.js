@@ -2,6 +2,9 @@ import todolist from "./todos";
 
 function todoDom() {
 
+    // Checks if the wrapper is already present
+    const existingWrapper = document.querySelector(".todosWrapper");
+    if (existingWrapper) existingWrapper.remove();
 
     const body = document.querySelector("body");
 
