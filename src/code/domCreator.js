@@ -1,4 +1,4 @@
-import todolist from "./todos";
+import { todolist, formInput } from "./todos";
 
 function todoDom() {
 
@@ -55,4 +55,49 @@ function todoDom() {
     body.appendChild(todosWrapper);
 }
 
-export default todoDom;
+// Creating a Dom for the form which creates new todo
+function creatorFormDom() {
+
+    const body = document.querySelector("body");
+
+    // Creating a Form
+    const creatorForm = document.createElement("form");
+    creatorForm.className = "creatorForm"
+
+    // Storing the reference of array to a variable
+    let formInputs = formInput();
+
+    // Itterating through the array to create every Input
+    formInputs.forEach((inputElement) => {
+
+        // Wrapper for input and label
+        const inputWrapper = document.createElement("div");
+        inputWrapper.className = "inputWrapper";
+
+        // Creating and appending label
+        const label = document.createElement("label");
+        label.for = inputElement.name;
+        label.textContent = inputElement.name;
+        inputWrapper.appendChild(label);
+
+        // Creating and appending Input
+        const input = document.createElement("input");
+        input.id = inputElement.name;
+        input.type = inputElement.type;
+        input.placeholder = inputElement.placeholder;
+        inputWrapper.appendChild(input);
+        
+        creatorForm.appendChild(inputWrapper); //Appending both
+    });
+
+    // Creating and appending a Submit Button 
+    const createBtn = document.createElement("button");
+    createBtn.type = "submit";
+    createBtn.textContent = "Create";
+    creatorForm.appendChild(createBtn);
+
+    body.appendChild(creatorForm); //Appending to body
+
+}
+
+export { todoDom, creatorFormDom };
