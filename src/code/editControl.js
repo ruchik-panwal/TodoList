@@ -1,6 +1,5 @@
-import { createNewBtn } from "./domCreator";
 import { creatorFormDom } from "./domCreator";
-import { createTodo } from "./editTodo";
+import { createTodo, cancelTodo} from "./editTodo";
 
 function newButton() {
 
@@ -10,6 +9,7 @@ function newButton() {
 
         creatorFormDom();
         createTodo();
+        cancelTodo();
 
     });
 
