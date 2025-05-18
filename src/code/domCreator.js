@@ -9,6 +9,8 @@ function createNewBtn(){
     newBtn.className = "newTodoBtn";
     newBtn.textContent = "New";
 
+    body.appendChild(newBtn);
+
 }
 
 function todoDom() {
@@ -68,7 +70,6 @@ function todoDom() {
 // Creating a Dom for the form which creates new todo
 function creatorFormDom() {
 
-    // const body = document.querySelector("body");
 
     // Creating a Form
     const creatorForm = document.createElement("form");
