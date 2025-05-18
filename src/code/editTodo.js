@@ -1,5 +1,5 @@
 import { todolist } from "./todos";
-import { todoDom, creatorFormDom } from "./domCreator";
+import { todoDom } from "./domCreator";
 
 function removeTodo() {
 
@@ -58,8 +58,22 @@ function createTodo() {
         createTodo();
         removeTodo();
 
+        // Removing the form once a todo is created
+        document.querySelector(".creatorForm").remove();
+
     });
 
 }
 
-export { removeTodo, createTodo };
+function cancelTodo() {
+
+    const cancelButton = document.querySelector(".cancelBtn");
+
+    cancelButton.addEventListener('click', (e) => { 
+        e.preventDefault();    
+        document.querySelector(".creatorForm").remove(); 
+    });
+}
+
+
+export { removeTodo, createTodo, cancelTodo };
