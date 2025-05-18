@@ -108,6 +108,13 @@ function creatorFormDom() {
     createBtn.textContent = "Create";
     creatorForm.appendChild(createBtn);
 
+    // Creating and Appending a Cancel Button
+    const cancelbtn = document.createElement("button");
+    cancelbtn.className = "cancelbtn";
+    cancelbtn.type = "submit";
+    cancelbtn.textContent = "Cancel";
+    creatorForm.appendChild(cancelbtn);
+
     body.appendChild(creatorForm); //Appending to body
 
 }
