@@ -1,5 +1,15 @@
 import { todolist, formInput } from "./todos";
 
+
+// Creates a Button which creates the Form for inputing todos
+function createBtn(){
+
+    const newBtn = document.createElement("button");
+    newBtn.className = "newTodoBtn";
+    newBtn.textContent = "New";
+
+}
+
 function todoDom() {
 
     // Checks if the wrapper is already present
