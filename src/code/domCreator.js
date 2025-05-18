@@ -1,8 +1,9 @@
 import { todolist, formInput } from "./todos";
 
+const body = document.querySelector("body");
 
 // Creates a Button which creates the Form for inputing todos
-function createBtn(){
+function createNewBtn(){
 
     const newBtn = document.createElement("button");
     newBtn.className = "newTodoBtn";
@@ -16,7 +17,6 @@ function todoDom() {
     const existingWrapper = document.querySelector(".todosWrapper");
     if (existingWrapper) existingWrapper.remove();
 
-    const body = document.querySelector("body");
 
     const todosWrapper = document.createElement("div"); //This will contain every todos
     todosWrapper.className = "todosWrapper";
@@ -68,7 +68,7 @@ function todoDom() {
 // Creating a Dom for the form which creates new todo
 function creatorFormDom() {
 
-    const body = document.querySelector("body");
+    // const body = document.querySelector("body");
 
     // Creating a Form
     const creatorForm = document.createElement("form");
@@ -111,4 +111,4 @@ function creatorFormDom() {
 
 }
 
-export { todoDom, creatorFormDom };
+export { todoDom, creatorFormDom, createNewBtn };
