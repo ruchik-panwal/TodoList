@@ -175,8 +175,6 @@ function editFormDom(ind) {
 
     // Changing input value to match that of the todo to be editted
     input.checked = todoObj[input.id];
-    console.log(todoObj[input.id]);
-    
 
     editorForm.appendChild(inputWrapper); //Appending both
 
