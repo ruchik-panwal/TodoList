@@ -1,5 +1,5 @@
-import { creatorFormDom } from "./domCreator";
-import { createTodo, cancelTodo} from "./editTodo";
+import { creatorFormDom, editFormDom } from "./domCreator";
+import { createTodo, cancelTodo } from "./editTodo";
 
 function newButton() {
 
@@ -15,4 +15,17 @@ function newButton() {
 
 }
 
-export default newButton;
+function editButton() {
+
+    const editBtn = document.querySelectorAll(".editBtn");
+
+    editBtn.forEach((editBtn) => {
+        editBtn.addEventListener('click', () => {
+            editFormDom();
+            cancelTodo();
+        });
+    });
+
+}
+
+export { newButton, editButton };
