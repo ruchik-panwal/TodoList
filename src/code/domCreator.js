@@ -120,7 +120,7 @@ function creatorFormDom() {
 }
 
 // Creating a DOM for the form which edits the todo
-function editFormDom() {
+function editFormDom(ind) {
 
     // Creating a Form
     const editorForm = document.createElement("form");
@@ -128,6 +128,10 @@ function editFormDom() {
 
     // Storing the reference of array to a variable
     let formInputs = formInput();
+    let todoArr = todolist();
+
+    // Storing array objecct of the todo
+    const todoObj = todoArr[ind];
 
     // Itterating through the array to create every Input
     formInputs.forEach((inputElement) => {
@@ -149,6 +153,9 @@ function editFormDom() {
         input.placeholder = inputElement.placeholder;
         inputWrapper.appendChild(input);
 
+        // Changing input value to match that of the todo to be editted
+        input.value = todoObj[input.id];
+
         editorForm.appendChild(inputWrapper); //Appending both
     });
 
@@ -165,6 +172,11 @@ function editFormDom() {
     input.id = "Status";
     input.type = "checkbox";
     inputWrapper.appendChild(input);
+
+    // Changing input value to match that of the todo to be editted
+    input.checked = todoObj[input.id];
+    console.log(todoObj[input.id]);
+    
 
     editorForm.appendChild(inputWrapper); //Appending both
 
