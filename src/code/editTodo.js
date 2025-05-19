@@ -52,7 +52,7 @@ function createTodo() {
         }
 
         todoArr.push(tempObj); //Pushing the Object in the array
-        
+
         // Reloading shit
         todoDom();
         createTodo();
@@ -69,9 +69,9 @@ function cancelTodo() {
 
     const cancelButton = document.querySelector(".cancelBtn");
 
-    cancelButton.addEventListener('click', (e) => { 
-        e.preventDefault(); 
-        document.querySelector("." + cancelButton.parentElement.className).remove(); 
+    cancelButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector("." + cancelButton.parentElement.className).remove();
     });
 }
 
