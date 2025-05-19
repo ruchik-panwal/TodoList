@@ -59,7 +59,8 @@ function createTodo() {
         todoDom();
         createTodo();
         removeTodo();
-        editTodo();
+        editButton();
+        
 
         // Removing the form once a todo is created
         document.querySelector(".creatorForm").remove();
@@ -102,7 +103,9 @@ function editTodo(ind){
         // Reloading shit
         todoDom();
         removeTodo();
-        editTodo();
+        editTodo(0);
+        editButton();
+        
 
         // Removing the form 
         document.querySelector(".editorForm").remove();
