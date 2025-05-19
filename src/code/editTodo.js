@@ -1,5 +1,6 @@
 import { todolist } from "./todos";
 import { todoDom } from "./domCreator";
+import { editButton } from "./editControl";
 
 function removeTodo() {
 
@@ -13,6 +14,7 @@ function removeTodo() {
             todoArr.splice(index, 1); // Removing the object 
             todoDom(); // Create New dom for the changed array
             removeTodo(); // assigns event listener to thr new Dom
+            editButton(); //assign event listerner 
         });
 
     });
