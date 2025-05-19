@@ -21,8 +21,9 @@ function editButton() {
 
     editBtn.forEach((editBtn) => {
         editBtn.addEventListener('click', () => {
-            editFormDom(parseInt(editBtn.parentElement.id.slice(1)));
-            editTodo(); // assigning properties
+            const index = parseInt(editBtn.parentElement.id.slice(1));
+            editFormDom(index); //Creating DOM for the Form
+            editTodo(index); // assigning properties
             cancelTodo(); // assigning properties
         });
     });
