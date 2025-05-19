@@ -71,7 +71,7 @@ function cancelTodo() {
 
     cancelButton.addEventListener('click', (e) => { 
         e.preventDefault(); 
-        document.querySelector("."+ cancelButton.parentElement.className).remove(); 
+        document.querySelector("." + cancelButton.parentElement.className).remove(); 
     });
 }
 
