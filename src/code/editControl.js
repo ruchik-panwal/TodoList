@@ -21,7 +21,7 @@ function editButton() {
 
     editBtn.forEach((editBtn) => {
         editBtn.addEventListener('click', () => {
-            editFormDom();
+            editFormDom(parseInt(editBtn.parentElement.id.slice(1)));
             cancelTodo();
         });
     });
