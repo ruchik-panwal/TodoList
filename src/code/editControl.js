@@ -1,5 +1,5 @@
 import { creatorFormDom, editFormDom } from "./domCreator";
-import { createTodo, cancelTodo } from "./editTodo";
+import { createTodo, cancelTodo, editTodo } from "./editTodo";
 
 function newButton() {
 
@@ -22,7 +22,8 @@ function editButton() {
     editBtn.forEach((editBtn) => {
         editBtn.addEventListener('click', () => {
             editFormDom(parseInt(editBtn.parentElement.id.slice(1)));
-            cancelTodo();
+            editTodo(); // assigning properties
+            cancelTodo(); // assigning properties
         });
     });
 
