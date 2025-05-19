@@ -5,7 +5,7 @@ let todos = [
         Description: "lorem ipsum bhosda",
         DueDate: "22-02-20",
         Priority: 1,
-        status: false,
+        Status: false,
         project: "default"
     },
     {
@@ -13,7 +13,7 @@ let todos = [
         Description: "IDEA Heckathon linkedin post",
         DueDate: "17-05-25",
         Priority: 1,
-        status: false,
+        Status: false,
         project: "default"
     },
     {
@@ -21,7 +21,7 @@ let todos = [
         Description: "DSA Karle bhai varna job nahi milega",
         DueDate: "22-02-20",
         Priority: 1,
-        status: false,
+        Status: false,
         project: "default"
     }
 ]
