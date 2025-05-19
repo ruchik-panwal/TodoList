@@ -78,4 +78,34 @@ function cancelTodo() {
 }
 
 
-export { removeTodo, createTodo, cancelTodo };
+// this edits the todo as per the information given by the user
+function editTodo(ind){
+
+    const formEditBtn = document.querySelector(".formEditBtn"); //Selecting Edit Button
+    const inputs = document.querySelectorAll("input"); //Selecting input fields
+
+    const todoArr = todolist();
+
+    formEditBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+    
+        // Going through tempObj to update properties 
+        for (const element in todoArr[ind]) {
+
+            // going through every input
+            inputs.forEach((input) => {
+                if (element == input.id) todoArr[ind][element] = input.value; //ex if(Title == Title) array[Title] = inputValue
+            });
+        }
+
+        // Reloading shit
+        todoDom();
+        removeTodo();
+
+        // Removing the form 
+        document.querySelector(".editorForm").remove();
+    });
+
+}
+
+export { removeTodo, createTodo, cancelTodo, editTodo };
