@@ -55,10 +55,11 @@ function createTodo() {
 
         todoArr.push(tempObj); //Pushing the Object in the array
 
-        // Reloading shit
+        // re-rendering
         todoDom();
         createTodo();
         removeTodo();
+        editTodo();
 
         // Removing the form once a todo is created
         document.querySelector(".creatorForm").remove();
@@ -101,6 +102,7 @@ function editTodo(ind){
         // Reloading shit
         todoDom();
         removeTodo();
+        editTodo();
 
         // Removing the form 
         document.querySelector(".editorForm").remove();
