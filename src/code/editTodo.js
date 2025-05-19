@@ -70,8 +70,8 @@ function cancelTodo() {
     const cancelButton = document.querySelector(".cancelBtn");
 
     cancelButton.addEventListener('click', (e) => { 
-        e.preventDefault();    
-        document.querySelector(".creatorForm").remove(); 
+        e.preventDefault(); 
+        document.querySelector("."+ cancelButton.parentElement.className).remove(); 
     });
 }
 
