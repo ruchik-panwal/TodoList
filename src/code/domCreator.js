@@ -3,7 +3,7 @@ import { todolist, formInput } from "./todos";
 const body = document.querySelector("body");
 
 // Creates a Button which creates the Form for inputing todos
-function createNewBtn(){
+function createNewBtn() {
 
     const newBtn = document.createElement("button");
     newBtn.className = "newTodoBtn";
@@ -97,7 +97,7 @@ function creatorFormDom() {
         input.type = inputElement.type;
         input.placeholder = inputElement.placeholder;
         inputWrapper.appendChild(input);
-        
+
         creatorForm.appendChild(inputWrapper); //Appending both
     });
 
@@ -119,4 +119,72 @@ function creatorFormDom() {
 
 }
 
-export { todoDom, creatorFormDom, createNewBtn };
+// Creating a DOM for the form which edits the todo
+function editFormDom() {
+
+    // Creating a Form
+    const editorForm = document.createElement("form");
+    editorForm.className = "editorForm"
+
+    // Storing the reference of array to a variable
+    let formInputs = formInput();
+
+    // Itterating through the array to create every Input
+    formInputs.forEach((inputElement) => {
+
+        // Wrapper for input and label
+        const inputWrapper = document.createElement("div");
+        inputWrapper.className = "inputWrapper";
+
+        // Creating and appending label
+        const label = document.createElement("label");
+        label.for = inputElement.name;
+        label.textContent = inputElement.name;
+        inputWrapper.appendChild(label);
+
+        // Creating and appending Input
+        const input = document.createElement("input");
+        input.id = inputElement.name;
+        input.type = inputElement.type;
+        input.placeholder = inputElement.placeholder;
+        inputWrapper.appendChild(input);
+
+        editorForm.appendChild(inputWrapper); //Appending both
+    });
+
+    // Adding a status Input
+    const inputWrapper = document.createElement("div");
+    inputWrapper.className = "inputWrapper";
+
+    const label = document.createElement("label");
+    label.for = "Status";
+    label.textContent = "Completed";
+    inputWrapper.appendChild(label);
+
+    const input = document.createElement("input");
+    input.id = "Status";
+    input.type = "checkbox";
+    inputWrapper.appendChild(input);
+
+    editorForm.appendChild(inputWrapper); //Appending both
+
+
+    // Creating and appending a Submit Button 
+    const formEditBtn = document.createElement("button");
+    formEditBtn.className = "formEditBtn";
+    formEditBtn.type = "submit";
+    formEditBtn.textContent = "Edit";
+    editorForm.appendChild(formEditBtn);
+
+    // Creating and Appending a Cancel Button
+    const cancelBtn = document.createElement("button");
+    cancelBtn.className = "cancelBtn";
+    cancelBtn.type = "submit";
+    cancelBtn.textContent = "Cancel";
+    editorForm.appendChild(cancelBtn);
+
+    body.appendChild(editorForm); //Appending to body
+
+}
+
+export { todoDom, creatorFormDom, createNewBtn, editFormDom };
