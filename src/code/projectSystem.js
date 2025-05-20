@@ -19,6 +19,8 @@ function projectForm() {
 
     projectSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        projectFormInput.value ? newProjectBtn(projectFormInput.value) : newProjectBtn(projectFormInput.placeholder); 
+        projectCancelBtn.parentElement.parentElement.remove(); //Cancelling
     });
 
     const projectCancelBtn = document.querySelector(".projectFormCancelBtn");
