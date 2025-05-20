@@ -23,11 +23,11 @@ function defProjectBtn(){
 }
 
 // Creates new project after form subbmit
-function newProjectBtn(){
+function newProjectBtn(name){
 
     const newProjectBtn = document.createElement("button");
     newProjectBtn.className = "Project" + 1;
-    newProjectBtn.textContent = "Project" + 1;
+    newProjectBtn.textContent = name;
 
     const projectBtnWrapper = document.querySelector(".projectBtnWrapper")
     projectBtnWrapper.appendChild(newProjectBtn);
