@@ -1,4 +1,5 @@
 import { newProjectBtn, newProjectFormDom } from "./domCreator";
+import { getProjectSelectionStatus ,setProjectSelectionStatus } from "./todos";
 
 // Calls the DomCreator for ProjectForm
 function newProject() {
@@ -23,6 +24,8 @@ function projectForm() {
         e.preventDefault();
         projectFormInput.value ? newProjectBtn(projectFormInput.value) : newProjectBtn(projectFormInput.placeholder); //If input has value then seend it else keep the placeholder as name 
         projectCancelBtn.parentElement.parentElement.remove(); //Cancelling
+
+        projectSelection(); //rendering
     });
 
     const projectCancelBtn = document.querySelector(".projectFormCancelBtn"); //Selecting Cancel Button
@@ -30,7 +33,29 @@ function projectForm() {
     projectCancelBtn.addEventListener('click', (e) => {
         e.preventDefault();
         projectCancelBtn.parentElement.parentElement.remove(); //Cancelling
+
+        projectSelection(); //rendering
     });
+
+
 }
 
-export { newProject, projectForm };
+// selects the project clicked by user
+function projectSelection() {
+
+    const projectBtns = document.querySelectorAll(".projectButton");
+
+    projectBtns.forEach((btn) => {
+
+        btn.addEventListener('click', (e) => {
+
+            projectBtns.forEach((e) => { e.id = ""; }); // Changes id to blank to keep default css
+            btn.id = "selectedProject"; // Changes id for special css
+            setProjectSelectionStatus(btn.textContent); // Changes global status for keeeping track 
+        });
+
+    });
+
+}
+
+export { newProject, projectForm, projectSelection };
