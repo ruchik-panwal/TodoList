@@ -53,7 +53,7 @@ let forminputs = [
     }
 ]
 
-let projectStatus = "default";
+let projectStatus = "Default";
 
 function todolist() {
     return todos;
