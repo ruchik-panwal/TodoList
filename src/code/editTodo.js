@@ -1,4 +1,4 @@
-import { todolist } from "./todos";
+import { todolist , getProjectSelectionStatus } from "./todos";
 import { todoDom } from "./domCreator";
 import { editButton } from "./editControl";
 
@@ -33,7 +33,7 @@ function createTodo() {
         DueDate: "",
         Priority: 1,
         status: 0,
-        project: "default"
+        Project: ""
     };
 
     // storing array reference to this variable
@@ -52,6 +52,8 @@ function createTodo() {
                 if (element == input.id) tempObj[element] = input.value; //ex if(Title == Title) tempObj[Title] = inputValue
             });
         }
+
+        tempObj.Project = getProjectSelectionStatus();
 
         todoArr.push(tempObj); //Pushing the Object in the array
 
