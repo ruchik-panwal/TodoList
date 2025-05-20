@@ -79,7 +79,6 @@ function cancelTodo() {
     });
 }
 
-
 // this edits the todo as per the information given by the user
 function editTodo(ind){
 
