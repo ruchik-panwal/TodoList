@@ -26,7 +26,7 @@ function defProjectBtn(){
 function newProjectBtn(name){
 
     const newProjectBtn = document.createElement("button");
-    newProjectBtn.className = "Project" + 1;
+    newProjectBtn.className = "projectButton";
     newProjectBtn.textContent = name;
 
     const projectBtnWrapper = document.querySelector(".projectBtnWrapper")
