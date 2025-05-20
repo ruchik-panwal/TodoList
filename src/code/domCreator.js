@@ -2,6 +2,26 @@ import { todolist, formInput } from "./todos";
 
 const body = document.querySelector("body");
 
+// Creating DOM for Different project and new project button
+function defProjectBtn(){
+
+    const defaulfBtn = document.createElement("button");
+    defaulfBtn.className = "projectBtn";
+    defaulfBtn.textContent = "Default";
+
+    const newProjectBtn = document.createElement("button");
+    newProjectBtn.className = "newProjectBtn";
+    newProjectBtn.textContent = "New Project";
+
+    const projectBtnWrapper = document.createElement("div");
+    projectBtnWrapper.className = "projectBtnWrapper";
+
+    projectBtnWrapper.appendChild(defaulfBtn);
+    projectBtnWrapper.appendChild(newProjectBtn);
+    body.appendChild(projectBtnWrapper);
+
+}
+
 // Creates a Button which creates the Form for inputing todos
 function createNewBtn() {
 
@@ -197,4 +217,4 @@ function editFormDom(ind) {
 
 }
 
-export { todoDom, creatorFormDom, createNewBtn, editFormDom };
+export { todoDom, creatorFormDom, createNewBtn, editFormDom, defProjectBtn };
