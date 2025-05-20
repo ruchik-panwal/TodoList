@@ -22,6 +22,7 @@ function defProjectBtn(){
 
 }
 
+// Creates new project after form subbmit
 function newProjectBtn(){
 
     const newProjectBtn = document.createElement("button");
@@ -31,6 +32,47 @@ function newProjectBtn(){
     const projectBtnWrapper = document.querySelector(".projectBtnWrapper")
     projectBtnWrapper.appendChild(newProjectBtn);
 
+}
+
+// Creates DOM For form of newProject
+function newProjectFormDom(){
+
+    const projectFormDom = document.createElement("form");
+
+    const projectFormInput = document.createElement("input");
+    projectFormInput.type = "text";
+    projectFormInput.id = "projectFormInput";
+    projectFormInput.placeholder = "Project 1";
+
+    const projectFormLabel = document.createElement("label");
+    projectFormLabel.for = "projectFormInput";
+    projectFormLabel.textContent = "Project Name: ";
+
+    const projectFormSubmitBtn = document.createElement("button");
+    projectFormSubmitBtn.className = "projectFormSubmitBtn";
+    projectFormSubmitBtn.type = "submit";
+    projectFormSubmitBtn.textContent = "Done";
+
+    const projectFormCancelBtn = document.createElement("button");
+    projectFormCancelBtn.textContent = "Cancel";
+    projectFormCancelBtn.className = "projectFormCancelBtn";
+
+    const projectForminputWrapper = document.createElement("div");
+    projectForminputWrapper.className =  "projectForminputWrapper";
+
+    const projectFormBtnWrapper = document.createElement("div");
+    projectFormBtnWrapper.className = "projectFormBtnWrapper";
+
+    projectForminputWrapper.appendChild(projectFormLabel);
+    projectForminputWrapper.appendChild(projectFormInput);
+
+    projectFormBtnWrapper.appendChild(projectFormSubmitBtn);
+    projectFormBtnWrapper.appendChild(projectFormCancelBtn);
+
+    projectFormDom.appendChild(projectForminputWrapper);
+    projectFormDom.appendChild(projectFormBtnWrapper);
+
+    body.appendChild(projectFormDom);
 }
 
 // Creates a Button which creates the Form for inputing todos
@@ -228,4 +270,4 @@ function editFormDom(ind) {
 
 }
 
-export { todoDom, creatorFormDom, createNewBtn, editFormDom, defProjectBtn, newProjectBtn };
+export { todoDom, creatorFormDom, createNewBtn, editFormDom, defProjectBtn, newProjectBtn, newProjectFormDom };
