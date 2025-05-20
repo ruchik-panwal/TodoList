@@ -227,4 +227,4 @@ function editFormDom(ind) {
 
 }
 
-export { todoDom, creatorFormDom, createNewBtn, editFormDom, defProjectBtn };
+export { todoDom, creatorFormDom, createNewBtn, editFormDom, defProjectBtn, newProjectBtn };
