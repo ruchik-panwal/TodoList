@@ -6,7 +6,7 @@ const body = document.querySelector("body");
 function defProjectBtn(){
 
     const defaulfBtn = document.createElement("button");
-    defaulfBtn.className = "projectBtn";
+    defaulfBtn.className = "projectButton";
     defaulfBtn.textContent = "Default";
 
     const newProjectBtn = document.createElement("button");
