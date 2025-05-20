@@ -6,7 +6,7 @@ let todos = [
         DueDate: "22-02-20",
         Priority: 1,
         Status: false,
-        project: "default"
+        Project: "default"
     },
     {
         Title: "Linkedin Post",
@@ -14,7 +14,7 @@ let todos = [
         DueDate: "17-05-25",
         Priority: 1,
         Status: false,
-        project: "default"
+        Project: "default"
     },
     {
         Title: "DSA",
@@ -22,7 +22,7 @@ let todos = [
         DueDate: "22-02-20",
         Priority: 1,
         Status: false,
-        project: "default"
+        Project: "default"
     }
 ]
 
@@ -63,8 +63,12 @@ function formInput(){
     return forminputs;
 }
 
-function projectSelectionStatus(){
+function setProjectSelectionStatus(val){
+        projectStatus = val;
+}
+
+function getProjectSelectionStatus(){
     return projectStatus ;
 }
 
-export  {todolist,formInput, projectSelectionStatus};
+export  {todolist,formInput, getProjectSelectionStatus, setProjectSelectionStatus};
