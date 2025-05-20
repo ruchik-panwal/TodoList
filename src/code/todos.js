@@ -63,8 +63,8 @@ function formInput(){
     return forminputs;
 }
 
-function projectSelection(){
+function projectSelectionStatus(){
     return projectStatus ;
 }
 
-export  {todolist,formInput, projectSelection};
+export  {todolist,formInput, projectSelectionStatus};
