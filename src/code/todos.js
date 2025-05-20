@@ -53,6 +53,8 @@ let forminputs = [
     }
 ]
 
+let projectStatus = "default";
+
 function todolist() {
     return todos;
 }
@@ -61,4 +63,8 @@ function formInput(){
     return forminputs;
 }
 
-export  {todolist,formInput};
+function projectSelection(){
+    return projectStatus ;
+}
+
+export  {todolist,formInput, projectSelection};
