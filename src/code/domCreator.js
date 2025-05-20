@@ -16,9 +16,9 @@ function defProjectBtn(){
     const projectBtnWrapper = document.createElement("div");
     projectBtnWrapper.className = "projectBtnWrapper";
 
-    projectBtnWrapper.appendChild(newProjectBtn);
-    body.appendChild(defaulfBtn);
+    projectBtnWrapper.appendChild(defaulfBtn);
     body.appendChild(projectBtnWrapper);
+    body.appendChild(newProjectBtn);
 
 }
 
@@ -28,6 +28,7 @@ function newProjectBtn(){
     newProjectBtn.className = "Project" + 1;
     newProjectBtn.textContent = "Project" + 1;
 
+    const projectBtnWrapper = document.querySelector(".projectBtnWrapper")
     projectBtnWrapper.appendChild(newProjectBtn);
 
 }
