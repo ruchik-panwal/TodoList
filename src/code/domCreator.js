@@ -16,8 +16,8 @@ function defProjectBtn(){
     const projectBtnWrapper = document.createElement("div");
     projectBtnWrapper.className = "projectBtnWrapper";
 
-    projectBtnWrapper.appendChild(defaulfBtn);
-    body.appendChild(newProjectBtn);
+    projectBtnWrapper.appendChild(newProjectBtn);
+    body.appendChild(defaulfBtn);
     body.appendChild(projectBtnWrapper);
 
 }
