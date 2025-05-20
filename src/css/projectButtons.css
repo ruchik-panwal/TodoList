@@ -1,0 +1,7 @@
+.projectButton {
+    border-style: none;
+}
+
+.selectedProject{
+    border-style: solid;
+}
