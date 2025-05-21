@@ -3,7 +3,7 @@ import { todolist, formInput } from "./todos";
 const body = document.querySelector("body");
 
 // Creating DOM for Different project and new project button
-function defProjectBtn(){
+function defProjectBtn() {
 
     const defaulfBtn = document.createElement("button");
     defaulfBtn.className = "projectButton";
@@ -23,7 +23,7 @@ function defProjectBtn(){
 }
 
 // Creates new project after form subbmit
-function newProjectBtn(name){
+function newProjectBtn(name) {
 
     const newProjectBtn = document.createElement("button");
     newProjectBtn.className = "projectButton";
@@ -35,7 +35,7 @@ function newProjectBtn(name){
 }
 
 // Creates DOM For form of newProject
-function newProjectFormDom(){
+function newProjectFormDom() {
 
     const projectFormDom = document.createElement("form");
 
@@ -58,7 +58,7 @@ function newProjectFormDom(){
     projectFormCancelBtn.className = "projectFormCancelBtn";
 
     const projectForminputWrapper = document.createElement("div");
-    projectForminputWrapper.className =  "projectForminputWrapper";
+    projectForminputWrapper.className = "projectForminputWrapper";
 
     const projectFormBtnWrapper = document.createElement("div");
     projectFormBtnWrapper.className = "projectFormBtnWrapper";
@@ -110,27 +110,52 @@ function todoDom() {
         todoDiv.className = "todoDiv";
         todoDiv.id = "x" + count++; //This gives every todo div the index of its og object
 
+        // Wrapper For Date And TodoButton [For Styling]
+        const dateBtnWrapper = document.createElement("div");
+        dateBtnWrapper.className = "dateBtnWrapper";
+
+        // Wrapper For Title And Description [For Styling]
+        const titleDesWrapper = document.createElement("div");
+        titleDesWrapper.className = "titleDesWrapper";
+
+
         // going through the single todo object to create dom for all the properties
         for (const type in todo) {
 
-            const typeDiv = document.createElement("div");
-            typeDiv.className = type;
-            typeDiv.textContent = todo[type];
-            todoDiv.appendChild(typeDiv);
+            if (type == "Title" || type == "Description" || type == "DueDate") {
+                const typeDiv = document.createElement("div");
+                typeDiv.className = type;
+                typeDiv.textContent = todo[type];
 
+                if (type == "DueDate")
+                    dateBtnWrapper.appendChild(typeDiv);
+                else
+                    titleDesWrapper.appendChild(typeDiv);
+            }
         }
 
-        // Creating and appending the remove Button
-        const rmBtn = document.createElement("button");
-        rmBtn.className = "rmBtn";
-        rmBtn.textContent = "Remove";
-        todoDiv.appendChild(rmBtn);
+        // creatin a wrapper for buttons
+        const todoBtnWrapper = document.createElement("div");
+        todoBtnWrapper.className = "todoBtnWrapper";
 
         // Creating and appending the edit button
         const editBtn = document.createElement("button");
         editBtn.className = "editBtn";
         editBtn.textContent = "Edit";
-        todoDiv.appendChild(editBtn);
+        todoBtnWrapper.appendChild(editBtn);
+
+        // Creating and appending the remove Button
+        const rmBtn = document.createElement("button");
+        rmBtn.className = "rmBtn";
+        rmBtn.textContent = "X";
+        todoBtnWrapper.appendChild(rmBtn);
+
+        // Appending buttons 
+        dateBtnWrapper.appendChild(todoBtnWrapper);
+
+        todoDiv.appendChild(titleDesWrapper);
+        todoDiv.appendChild(dateBtnWrapper);
+
 
         // Appending everything to a wrapper
         todosWrapper.appendChild(todoDiv);
