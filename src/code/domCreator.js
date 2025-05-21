@@ -16,6 +16,39 @@ function header(){
 
 }
 
+function footer(){
+
+    const footerTab = document.createElement("div");
+    footerTab.className = "footerTab";
+
+    const creditTab = document.createElement("div");
+    creditTab.className = "creditTab";
+
+    const creditName = document.createElement("div");
+    creditName.className = "creditName";
+    creditName.textContent = "By Ruchik Sandeep Panwal"
+    creditTab.appendChild(creditName);
+
+    const creditLinks = document.createElement("div");
+    creditLinks.className = "creditLinks";
+    creditTab.appendChild(creditLinks);
+
+    ["github", "linkedIn"].forEach((link) => {
+        const linkDiv = document.createElement("a");
+        linkDiv.className = "linkDiv";
+        linkDiv.id = link;
+        linkDiv.textContent = link;
+
+        if(link == "github")
+            linkDiv.href = "https://github.com/ruchik-panwal";
+
+        creditLinks.appendChild(linkDiv);
+    });
+
+    footerTab.appendChild(creditTab);
+    body.appendChild(footerTab);
+}
+
 function backBone() {
 
     const mainWrapper = document.createElement("div");
@@ -343,4 +376,4 @@ function editFormDom(ind) {
 
 }
 
-export { todoDom, creatorFormDom, createNewBtn, editFormDom, defProjectBtn, newProjectBtn, newProjectFormDom, backBone, header };
+export { todoDom, creatorFormDom, createNewBtn, editFormDom, defProjectBtn, newProjectBtn, newProjectFormDom, backBone, header, footer };
