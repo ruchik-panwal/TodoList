@@ -10,7 +10,7 @@ function removeTodo() {
     rmBtn.forEach((rm) => {
 
         rm.addEventListener("click", () => {
-            const index = parseInt(rm.parentElement.id.slice(1)); //takes integer from the id
+            const index = parseInt(rm.parentElement.parentElement.parentElement.id.slice(1)); //takes integer from the id
             todoArr.splice(index, 1); // Removing the object 
             todoDom(); // Create New dom for the changed array
             removeTodo(); // assigns event listener to thr new Dom
