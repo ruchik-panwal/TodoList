@@ -1,0 +1,14 @@
+.newTodoBtn {
+    border-radius: 50px;
+    border-style: none;
+    background-color: rgb(32, 224, 32);
+    color: white;
+
+    font-weight: 200;
+    font-size: 1.3rem;
+    height: 45px;
+    width: 120px;
+}
+.newTodoBtn:hover{
+    cursor: pointer;
+}

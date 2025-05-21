@@ -1,7 +1,49 @@
-.projectButton {
-    border-style: none;
+.projectText {
+    height: 30px;
+    color: rgb(247, 247, 247);
+    font-size: 1.3rem;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#selectedProject{
-    border-style: solid;
+.newProjectBtn,
+.projectButton {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.newProjectBtn {
+    background-color: transparent;
+    border: solid;
+    color: gray;
+    border-color: gray;
+}
+
+.newProjectBtn:hover {
+    background-color: rgba(66, 66, 66, 0.247);
+    cursor: pointer;
+}
+
+.projectBtnWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.projectButton {
+    border-style: none;
+    font-weight: 300;
+    background-color: rgb(51, 51, 51);
+    color: rgb(247, 247, 247);
+}
+#selectedProject {
+    background-color: whitesmoke;
+    color: #1b1b1b;
 }

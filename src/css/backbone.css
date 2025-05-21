@@ -1,0 +1,63 @@
+body{
+    background-color: whitesmoke;
+    font-family: 'Roboto';
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+button:hover{
+    cursor: pointer;
+}
+
+.mainWrapper{
+    display: grid;
+    gap: 10px;
+    padding: 50px 30px;
+    border-radius: 35px;
+    grid-template-columns: minmax(50px , 300px) 1fr;
+    grid-template-rows: 70px 1fr;
+
+    background-color: #1b1b1b;
+}
+
+.controlsWrapper,
+.projectsWrapper,
+.todosWrapper{
+    background-color: rgb(36, 36, 36);
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.controlsWrapper{
+    height: 70px;
+    width: 100%;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+}
+
+.projectsWrapper{
+    height: 100%;
+    width: 100%;
+    padding: 30px ;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    grid-area: 1 / 1 / 3 / 1;
+}
+
+.todosWrapper{
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
+    grid-template-rows: repeat(auto-fit, 300px);
+    gap: 20px;
+    justify-items: center;
+}
