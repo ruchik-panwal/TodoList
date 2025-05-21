@@ -1,19 +1,85 @@
-/* temporary */
+/* Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-body{
-    background-color: gray;
+/* Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    --todo-background: #ff8c3a; 
 }
 
-/* Permanent */
 
-.todosWrapper{
+.todoDiv {
+    font-family: 'Roboto';
 
-    margin: 10px;
-    background-color: palevioletred;
+    background-color: var(--todo-background);
+    height: 300px;
+    width: 300px;
+
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 25px 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.todoDiv{
+/* Title And Description */
+.titleDesWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Title {
+    font-family: 'Inter';
+    font-weight: 900;
 
-    margin: 5px;
-    background-color: goldenrod;
+    font-size: 2rem;
+    line-height: 1.8rem;
+}
+.Description {
+    overflow: hidden;
+    height: 120px;
+}
+
+/* Date And Todo Buttons */
+.dateBtnWrapper {
+    display: flex;
+    align-items: center;
+}
+.DueDate {
+    font-family: 'Inter';
+    font-weight: 900;
+    font-size: 20px;
+}
+
+
+/* Todo Button Wrapper */
+.todoBtnWrapper {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+    justify-self: flex-end;
+}
+.todoBtnWrapper button {
+    background-color: black;
+    color: var(--todo-background);
+    font-size: 15px;
+    border-style: none;
+}
+.todoBtnWrapper button:hover {
+    cursor: pointer;
+}
+.rmBtn {
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+}
+.editBtn {
+    height: 35px;
+    width: 60px;
+    border-radius: 35px;
 }
