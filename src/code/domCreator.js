@@ -2,6 +2,24 @@ import { todolist, formInput } from "./todos";
 
 const body = document.querySelector("body");
 
+function backBone() {
+
+    // Creator Todo Wrapper
+    const todosWrapper = document.createElement("div"); //This will contain every todos
+    todosWrapper.className = "todosWrapper";
+    body.appendChild(todosWrapper);
+
+    // Creating Project Wrapper
+    const controlsWrapper = document.createElement("div");
+    controlsWrapper.className = "controlsWrapper";
+    body.appendChild(controlsWrapper);
+
+    // Creating Projects Wrapper
+    const projectsWrapper = document.createElement("div");
+    projectsWrapper.className = "projectsWrapper";
+    body.appendChild(projectsWrapper);
+}
+
 // Creating DOM for Different project and new project button
 function defProjectBtn() {
 
@@ -88,13 +106,13 @@ function createNewBtn() {
 
 function todoDom() {
 
+    const todosWrapper = document.querySelector(".todosWrapper");
+
     // Checks if the wrapper is already present
-    const existingWrapper = document.querySelector(".todosWrapper");
-    if (existingWrapper) existingWrapper.remove();
+    while (todosWrapper.firstChild) {
+        todosWrapper.removeChild(todosWrapper.firstChild);
+    }
 
-
-    const todosWrapper = document.createElement("div"); //This will contain every todos
-    todosWrapper.className = "todosWrapper";
 
     // adding a counter
     let count = 0
@@ -160,9 +178,6 @@ function todoDom() {
         // Appending everything to a wrapper
         todosWrapper.appendChild(todoDiv);
     });
-
-    // Appending to body
-    body.appendChild(todosWrapper);
 }
 
 // Creating a Dom for the form which creates new todo
@@ -295,4 +310,4 @@ function editFormDom(ind) {
 
 }
 
-export { todoDom, creatorFormDom, createNewBtn, editFormDom, defProjectBtn, newProjectBtn, newProjectFormDom };
+export { todoDom, creatorFormDom, createNewBtn, editFormDom, defProjectBtn, newProjectBtn, newProjectFormDom, backBone };
