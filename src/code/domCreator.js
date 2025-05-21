@@ -2,26 +2,58 @@ import { todolist, formInput } from "./todos";
 
 const body = document.querySelector("body");
 
+function header(){
+
+    const headerTab = document.createElement("div");
+    headerTab.className = "headerTab";
+
+    const logo = document.createElement("div");
+    logo.className = "logo";
+    logo.textContent = "TODOOM";
+
+    headerTab.appendChild(logo);
+    body.appendChild(headerTab);
+
+}
+
 function backBone() {
+
+    const mainWrapper = document.createElement("div");
+    mainWrapper.className = "mainWrapper";
+    
+    // Creating Projects Wrapper
+    const projectsWrapper = document.createElement("div");
+    projectsWrapper.className = "projectsWrapper";
+
+    const projectBtnWrapper = document.createElement("div");
+    projectBtnWrapper.className = "projectBtnWrapper";
+
+    const projectText = document.createElement("div");
+    projectText.className = "projectText";
+    projectText.textContent = "Projects"
+    projectBtnWrapper.appendChild(projectText);
+
+    projectsWrapper.appendChild(projectBtnWrapper);
+    
+    mainWrapper.appendChild(projectsWrapper);    
+
+    // Creating Control Wrapper
+    const controlsWrapper = document.createElement("div");
+    controlsWrapper.className = "controlsWrapper";
+    mainWrapper.appendChild(controlsWrapper);
 
     // Creator Todo Wrapper
     const todosWrapper = document.createElement("div"); //This will contain every todos
     todosWrapper.className = "todosWrapper";
-    body.appendChild(todosWrapper);
+    mainWrapper.appendChild(todosWrapper);
 
-    // Creating Project Wrapper
-    const controlsWrapper = document.createElement("div");
-    controlsWrapper.className = "controlsWrapper";
-    body.appendChild(controlsWrapper);
-
-    // Creating Projects Wrapper
-    const projectsWrapper = document.createElement("div");
-    projectsWrapper.className = "projectsWrapper";
-    body.appendChild(projectsWrapper);
+    body.appendChild(mainWrapper);
 }
 
 // Creating DOM for Different project and new project button
 function defProjectBtn() {
+
+    const projectsWrapper = document.querySelector(".projectsWrapper");
 
     const defaulfBtn = document.createElement("button");
     defaulfBtn.className = "projectButton";
@@ -31,12 +63,11 @@ function defProjectBtn() {
     newProjectBtn.className = "newProjectBtn";
     newProjectBtn.textContent = "New Project";
 
-    const projectBtnWrapper = document.createElement("div");
-    projectBtnWrapper.className = "projectBtnWrapper";
+    const projectBtnWrapper = document.querySelector(".projectBtnWrapper");
 
     projectBtnWrapper.appendChild(defaulfBtn);
-    body.appendChild(projectBtnWrapper);
-    body.appendChild(newProjectBtn);
+    projectsWrapper.appendChild(newProjectBtn);
+    projectsWrapper.appendChild(projectBtnWrapper);
 
 }
 
@@ -96,11 +127,13 @@ function newProjectFormDom() {
 // Creates a Button which creates the Form for inputing todos
 function createNewBtn() {
 
+    const controlsWrapper = document.querySelector(".controlsWrapper");
+
     const newBtn = document.createElement("button");
     newBtn.className = "newTodoBtn";
-    newBtn.textContent = "New";
+    newBtn.textContent = "NEW";
 
-    body.appendChild(newBtn);
+    controlsWrapper.appendChild(newBtn);
 
 }
 
@@ -310,4 +343,4 @@ function editFormDom(ind) {
 
 }
 
-export { todoDom, creatorFormDom, createNewBtn, editFormDom, defProjectBtn, newProjectBtn, newProjectFormDom, backBone };
+export { todoDom, creatorFormDom, createNewBtn, editFormDom, defProjectBtn, newProjectBtn, newProjectFormDom, backBone, header };
