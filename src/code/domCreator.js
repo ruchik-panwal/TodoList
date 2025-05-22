@@ -38,10 +38,14 @@ function footer(){
         linkDiv.className = "linkDiv";
         linkDiv.id = link;
         linkDiv.textContent = link;
+        linkDiv.target = "_blank";
+        linkDiv.rel = "noopener noreferrer"
 
         if(link == "github")
             linkDiv.href = "https://github.com/ruchik-panwal";
-
+        else{
+            linkDiv.href = "https://www.linkedin.com/in/ruchikpanwal/";
+        }
         creditLinks.appendChild(linkDiv);
     });
 
