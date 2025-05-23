@@ -1,9 +1,6 @@
 /* Main Body */
+
 body{
-
-    --main-bgm : #1b1b1b;
-    --accent-color : #242424;
-
     background-color: whitesmoke;
     font-family: 'Roboto';
     box-sizing: border-box;
