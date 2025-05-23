@@ -1,10 +1,12 @@
+/* For All the Forms */
+
 .holder {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
-    background: rgba(0, 0, 0, 0.836);
+    background: var(--holder-color);
 
     display: flex;
     justify-content: center;
@@ -20,7 +22,7 @@
     max-width: 500px;
     padding: 20px;
     border-radius: 10px;
-    background-color: #1b1b1b;
+    background-color: var(--main-bgm);
     font-family: "Inter";
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
@@ -34,7 +36,7 @@
 .inputWrapper,
 .projectForminputWrapper {
     padding: 5px;
-    color: whitesmoke;
+    color: var(--text-white);
     width: 100%;
 
     display: flex;
@@ -52,10 +54,10 @@
     max-width: 500px;
     border-style: none;
     height: 40px;
-    background-color: rgba(49, 49, 49, 0.781);
+    background-color: var(--input-bgm);
     box-sizing: border-box;
     padding: 0 20px;
-    color: white;
+    color: var(--text-white);
 
     border-radius: 5px;
 }
@@ -74,8 +76,8 @@
 .createBtn,
 .formEditBtn,
 .projectFormSubmitBtn{
-    background-color: rgb(32, 170, 32);
-    color: wheat;
+    background-color: var(--green-Btn);
+    color: var(--text-white);
 }
 
 .projectFormBtnWrapper{
