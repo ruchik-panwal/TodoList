@@ -65,7 +65,7 @@ function createTodo() {
         
 
         // Removing the form once a todo is created
-        document.querySelector(".creatorForm").remove();
+        document.querySelector(".creatorForm").parentElement.remove();
 
     });
 
@@ -77,7 +77,7 @@ function cancelTodo() {
 
     cancelButton.addEventListener('click', (e) => {
         e.preventDefault();
-        document.querySelector("." + cancelButton.parentElement.className).remove();
+        document.querySelector("." + cancelButton.parentElement.parentElement.className).remove();
     });
 }
 
@@ -109,7 +109,7 @@ function editTodo(ind){
         
 
         // Removing the form 
-        document.querySelector(".editorForm").remove();
+        document.querySelector(".editorForm").parentElement.remove();
     });
 
 }
