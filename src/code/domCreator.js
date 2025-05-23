@@ -152,37 +152,41 @@ function newProjectFormDom() {
     projectFormInput.id = "projectFormInput";
     projectFormInput.placeholder = "Project 1";
 
+    // Label For Projeect Input Name
     const projectFormLabel = document.createElement("label");
     projectFormLabel.for = "projectFormInput";
     projectFormLabel.textContent = "Project Name: ";
 
+    // Submit Button for project
     const projectFormSubmitBtn = document.createElement("button");
     projectFormSubmitBtn.className = "projectFormSubmitBtn";
     projectFormSubmitBtn.type = "submit";
     projectFormSubmitBtn.textContent = "Done";
 
+    // Cancel Button
     const projectFormCancelBtn = document.createElement("button");
     projectFormCancelBtn.textContent = "Cancel";
     projectFormCancelBtn.className = "projectFormCancelBtn";
 
+    // Wrapper For Form Inputs
     const projectForminputWrapper = document.createElement("div");
     projectForminputWrapper.className = "projectForminputWrapper";
 
+// Wrapper For Form Buttons
     const projectFormBtnWrapper = document.createElement("div");
     projectFormBtnWrapper.className = "projectFormBtnWrapper";
 
+    // Appending
     projectForminputWrapper.appendChild(projectFormLabel);
     projectForminputWrapper.appendChild(projectFormInput);
-
     projectFormBtnWrapper.appendChild(projectFormSubmitBtn);
     projectFormBtnWrapper.appendChild(projectFormCancelBtn);
-
     projectFormDom.appendChild(projectForminputWrapper);
     projectFormDom.appendChild(projectFormBtnWrapper);
 
+    // Added a wrapper for CSS
     const holder = document.createElement("div");
     holder.className = "holder";
-
     holder.appendChild(projectFormDom)
     body.appendChild(holder);
 }
@@ -190,14 +194,16 @@ function newProjectFormDom() {
 // Creates a Button which creates the Form for inputing todos
 function createNewBtn() {
 
+    // Creating Wrapper
     const controlsWrapper = document.querySelector(".controlsWrapper");
 
+    // A new Button which enables to create new Todo
     const newBtn = document.createElement("button");
     newBtn.className = "newTodoBtn";
     newBtn.textContent = "NEW";
 
+    // Append
     controlsWrapper.appendChild(newBtn);
-
 }
 
 function todoDom() {
