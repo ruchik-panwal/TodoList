@@ -1,4 +1,9 @@
+/* Main Body */
 body{
+
+    --main-bgm : #1b1b1b;
+    --accent-color : #242424;
+
     background-color: whitesmoke;
     font-family: 'Roboto';
     box-sizing: border-box;
@@ -7,9 +12,10 @@ body{
     padding: 0;
 }
 button:hover{
-    cursor: pointer;
+    cursor: pointer;  /* For all the buttons in the site */
 }
 
+/* CSS For the Main holder for all the TODO-Feature */
 .mainWrapper{
     display: grid;
     gap: 10px;
@@ -18,17 +24,19 @@ button:hover{
     grid-template-columns: minmax(50px , 300px) 1fr;
     grid-template-rows: 70px 1fr;
 
-    background-color: #1b1b1b;
+    background-color: var(--main-bgm);
 }
 
+/* All the Wrapper for TODO Features */
 .controlsWrapper,
 .projectsWrapper,
 .todosWrapper{
-    background-color: rgb(36, 36, 36);
+    background-color: var(--accent-color);
     border-radius: 30px;
     box-sizing: border-box;
 }
 
+/* The TODO Control Panel */
 .controlsWrapper{
     height: 70px;
     width: 100%;
@@ -38,6 +46,7 @@ button:hover{
     align-items: center;
 }
 
+/* The Project Panel */
 .projectsWrapper{
     height: 100%;
     width: 100%;
@@ -50,6 +59,7 @@ button:hover{
     grid-area: 1 / 1 / 3 / 1;
 }
 
+/* The TODO Viewer */
 .todosWrapper{
     box-sizing: border-box;
     padding: 20px;
