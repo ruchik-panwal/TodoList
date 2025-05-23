@@ -2,10 +2,13 @@ import { todoDom, createNewBtn, defProjectBtn, backBone, header, footer} from ".
 import { removeTodo } from "./code/editTodo";
 import { newButton, editButton } from "./code/editControl";
 import { newProject, projectSelection } from "./code/projectSystem";
-import "./css/todo.css";
-import "./css/creatorForm.css";
-import "./css/projectButtons.css"
+
+
+import "./css/colors.css";
 import "./css/backbone.css"
+import "./css/todo.css";
+import "./css/Form.css";
+import "./css/projectButtons.css"
 import "./css/controlWrapper.css"
 import "./css/headerFooter.css"
 
