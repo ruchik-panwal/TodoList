@@ -2,37 +2,47 @@ import { todolist, formInput } from "./todos";
 
 const body = document.querySelector("body");
 
+// DOM Creator for Header 
 function header(){
 
+    // Main Div for Header
     const headerTab = document.createElement("div");
     headerTab.className = "headerTab";
 
+    // LOGO
     const logo = document.createElement("div");
     logo.className = "logo";
     logo.textContent = "TODOOM";
 
+    // Appending Everything
     headerTab.appendChild(logo);
     body.appendChild(headerTab);
 
 }
 
+// DOM Creator for footer
 function footer(){
 
+    // Main footer Div
     const footerTab = document.createElement("div");
     footerTab.className = "footerTab";
 
+    // Wrapper for Credits
     const creditTab = document.createElement("div");
     creditTab.className = "creditTab";
 
+    // Adding my name to Credits
     const creditName = document.createElement("div");
     creditName.className = "creditName";
     creditName.textContent = "By Ruchik Sandeep Panwal"
     creditTab.appendChild(creditName);
 
+    // Wrapper for my socials' links
     const creditLinks = document.createElement("div");
     creditLinks.className = "creditLinks";
     creditTab.appendChild(creditLinks);
 
+    // Small loop for creating DOM for both my github and LinkedIn links
     ["github", "linkedIn"].forEach((link) => {
         const linkDiv = document.createElement("a");
         linkDiv.className = "linkDiv";
@@ -49,12 +59,15 @@ function footer(){
         creditLinks.appendChild(linkDiv);
     });
 
+    // Appending Everything
     footerTab.appendChild(creditTab);
     body.appendChild(footerTab);
 }
 
+// Creates The Base Dom for TODOList [Showing, controlling, everything]
 function backBone() {
 
+    // Main Wrapper
     const mainWrapper = document.createElement("div");
     mainWrapper.className = "mainWrapper";
     
@@ -62,17 +75,19 @@ function backBone() {
     const projectsWrapper = document.createElement("div");
     projectsWrapper.className = "projectsWrapper";
 
+    // Wrappers for all the Project Buttons
     const projectBtnWrapper = document.createElement("div");
     projectBtnWrapper.className = "projectBtnWrapper";
 
+    // Adding Heading for project Buttons
     const projectText = document.createElement("div");
     projectText.className = "projectText";
     projectText.textContent = "Projects"
     projectBtnWrapper.appendChild(projectText);
 
-    projectsWrapper.appendChild(projectBtnWrapper);
-    
-    mainWrapper.appendChild(projectsWrapper);    
+    // Appending
+    projectsWrapper.appendChild(projectBtnWrapper); 
+    mainWrapper.appendChild(projectsWrapper);   
 
     // Creating Control Wrapper
     const controlsWrapper = document.createElement("div");
@@ -87,34 +102,38 @@ function backBone() {
     body.appendChild(mainWrapper);
 }
 
-// Creating DOM for Different project and new project button
+// Creating DOM for Default project and new project button
 function defProjectBtn() {
+    const projectsWrapper = document.querySelector(".projectsWrapper"); // Wrapper
 
-    const projectsWrapper = document.querySelector(".projectsWrapper");
-
+    // Creating a Default Project Button
     const defaulfBtn = document.createElement("button");
     defaulfBtn.className = "projectButton";
     defaulfBtn.textContent = "Default";
+    defaulfBtn.id = "selectedProject";
 
+    // Creating a button which enables to add new project 
     const newProjectBtn = document.createElement("button");
     newProjectBtn.className = "newProjectBtn";
     newProjectBtn.textContent = "New Project";
 
-    const projectBtnWrapper = document.querySelector(".projectBtnWrapper");
+    const projectBtnWrapper = document.querySelector(".projectBtnWrapper"); // Wrapper
 
+    // Appending
     projectBtnWrapper.appendChild(defaulfBtn);
     projectsWrapper.appendChild(newProjectBtn);
     projectsWrapper.appendChild(projectBtnWrapper);
-
 }
 
 // Creates new project after form subbmit
 function newProjectBtn(name) {
 
+    // Creating a New Project
     const newProjectBtn = document.createElement("button");
     newProjectBtn.className = "projectButton";
     newProjectBtn.textContent = name;
 
+    // Appending
     const projectBtnWrapper = document.querySelector(".projectBtnWrapper")
     projectBtnWrapper.appendChild(newProjectBtn);
 
@@ -123,8 +142,11 @@ function newProjectBtn(name) {
 // Creates DOM For form of newProject
 function newProjectFormDom() {
 
+    // Creating Form
     const projectFormDom = document.createElement("form");
+    projectFormDom.className = "projectFormDom";
 
+    // Creating DOM which takes input for Project Name
     const projectFormInput = document.createElement("input");
     projectFormInput.type = "text";
     projectFormInput.id = "projectFormInput";
@@ -158,7 +180,11 @@ function newProjectFormDom() {
     projectFormDom.appendChild(projectForminputWrapper);
     projectFormDom.appendChild(projectFormBtnWrapper);
 
-    body.appendChild(projectFormDom);
+    const holder = document.createElement("div");
+    holder.className = "holder";
+
+    holder.appendChild(projectFormDom)
+    body.appendChild(holder);
 }
 
 // Creates a Button which creates the Form for inputing todos
@@ -298,7 +324,11 @@ function creatorFormDom() {
     cancelBtn.textContent = "Cancel";
     creatorForm.appendChild(cancelBtn);
 
-    body.appendChild(creatorForm); //Appending to body
+    const holder = document.createElement("div");
+    holder.className = "holder";
+
+    holder.appendChild(creatorForm);
+    body.appendChild(holder); //Appending to body
 
 }
 
@@ -376,7 +406,11 @@ function editFormDom(ind) {
     cancelBtn.textContent = "Cancel";
     editorForm.appendChild(cancelBtn);
 
-    body.appendChild(editorForm); //Appending to body
+    const holder = document.createElement("div");
+    holder.className = "holder";
+
+    holder.appendChild(editorForm);
+    body.appendChild(holder); //Appending to body
 
 }
 
