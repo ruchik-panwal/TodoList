@@ -4,10 +4,6 @@
 /* Roboto Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
-    --todo-background: #ff8c3a; 
-}
-
 
 .todoDiv {
     font-family: 'Roboto';
@@ -65,7 +61,7 @@ body {
     justify-self: flex-end;
 }
 .todoBtnWrapper button {
-    background-color: black;
+    background-color: var(--todo-Btn);
     color: var(--todo-background);
     font-size: 15px;
     border-style: none;
