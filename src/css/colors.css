@@ -1,0 +1,13 @@
+:root {
+    --main-bgm: #1b1b1b;
+    --accent-color: #242424;
+    --green-Btn: #20e020;
+    --text-white: whitesmoke;
+    --text-black: var(--main-bgm);
+    --holder-color: #000000d5;
+    --input-bgm: #313131c7;
+    --gray: gray;
+    --hover-color: #4242423f;
+    --todo-background: #ff8c3a;
+    --todo-Btn: black;
+}
