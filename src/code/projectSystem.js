@@ -23,7 +23,7 @@ function projectForm() {
     projectSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
         projectFormInput.value ? newProjectBtn(projectFormInput.value) : newProjectBtn(projectFormInput.placeholder); //If input has value then seend it else keep the placeholder as name 
-        projectCancelBtn.parentElement.parentElement.remove(); //Cancelling
+        projectCancelBtn.parentElement.parentElement.parentElement.remove(); //Cancelling
 
         projectSelection(); //rendering
     });
@@ -32,7 +32,7 @@ function projectForm() {
 
     projectCancelBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        projectCancelBtn.parentElement.parentElement.remove(); //Cancelling
+        projectCancelBtn.parentElement.parentElement.parentElement.remove(); //Cancelling
 
         projectSelection(); //rendering
     });
