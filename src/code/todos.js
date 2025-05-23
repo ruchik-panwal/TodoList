@@ -27,7 +27,7 @@ let todos = [
     {
         Title: "Linkedin Post",
         Description: "IDEA Heckathon linkedin post",
-        DueDate: "17-05-25",
+        DueDate: "2017-05-25",
         Priority: 1,
         Status: false,
         Project: "default"
