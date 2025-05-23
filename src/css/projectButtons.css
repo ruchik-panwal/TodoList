@@ -1,6 +1,6 @@
 .projectText {
     height: 30px;
-    color: rgb(247, 247, 247);
+    color: var(--text-white);
     font-size: 1.3rem;
  
     display: flex;
@@ -22,12 +22,12 @@
 .newProjectBtn {
     background-color: transparent;
     border: solid;
-    color: gray;
-    border-color: gray;
+    color: var(--gray);
+    border-color: var(--gray);
 }
 
 .newProjectBtn:hover {
-    background-color: rgba(66, 66, 66, 0.247);
+    background-color: var(--hover-color);
     cursor: pointer;
 }
 
@@ -40,10 +40,10 @@
 .projectButton {
     border-style: none;
     font-weight: 300;
-    background-color: rgb(51, 51, 51);
-    color: rgb(247, 247, 247);
+    background-color: var(--input-bgm);
+    color: var(--text-white);
 }
 #selectedProject {
-    background-color: whitesmoke;
-    color: #1b1b1b;
+    background-color: var(--text-white);
+    color: var(--main-bgm);
 }
