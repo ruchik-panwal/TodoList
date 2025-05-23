@@ -71,13 +71,14 @@ function createTodo() {
 
 }
 
+// Cancels and removes the form from the DOM
 function cancelTodo() {
 
     const cancelButton = document.querySelector(".cancelBtn");
 
     cancelButton.addEventListener('click', (e) => {
         e.preventDefault();
-        document.querySelector("." + cancelButton.parentElement.parentElement.className).remove();
+        document.querySelector("." + cancelButton.parentElement.parentElement.className).remove(); // Selecting and removing the main wrapper
     });
 }
 
