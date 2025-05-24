@@ -1,9 +1,9 @@
-import { todolist, formInput } from "./todos";
+import { todolist, formInput, getProjectSelectionStatus } from "./todos";
 
 const body = document.querySelector("body");
 
 // DOM Creator for Header 
-function header(){
+function header() {
 
     // Main Div for Header
     const headerTab = document.createElement("div");
@@ -21,7 +21,7 @@ function header(){
 }
 
 // DOM Creator for footer
-function footer(){
+function footer() {
 
     // Main footer Div
     const footerTab = document.createElement("div");
@@ -51,9 +51,9 @@ function footer(){
         linkDiv.target = "_blank";
         linkDiv.rel = "noopener noreferrer"
 
-        if(link == "github")
+        if (link == "github")
             linkDiv.href = "https://github.com/ruchik-panwal";
-        else{
+        else {
             linkDiv.href = "https://www.linkedin.com/in/ruchikpanwal/";
         }
         creditLinks.appendChild(linkDiv);
@@ -70,7 +70,7 @@ function backBone() {
     // Main Wrapper
     const mainWrapper = document.createElement("div");
     mainWrapper.className = "mainWrapper";
-    
+
     // Creating Projects Wrapper
     const projectsWrapper = document.createElement("div");
     projectsWrapper.className = "projectsWrapper";
@@ -86,8 +86,8 @@ function backBone() {
     projectBtnWrapper.appendChild(projectText);
 
     // Appending
-    projectsWrapper.appendChild(projectBtnWrapper); 
-    mainWrapper.appendChild(projectsWrapper);   
+    projectsWrapper.appendChild(projectBtnWrapper);
+    mainWrapper.appendChild(projectsWrapper);
 
     // Creating Control Wrapper
     const controlsWrapper = document.createElement("div");
@@ -172,7 +172,7 @@ function newProjectFormDom() {
     const projectForminputWrapper = document.createElement("div");
     projectForminputWrapper.className = "projectForminputWrapper";
 
-// Wrapper For Form Buttons
+    // Wrapper For Form Buttons
     const projectFormBtnWrapper = document.createElement("div");
     projectFormBtnWrapper.className = "projectFormBtnWrapper";
 
@@ -225,60 +225,63 @@ function todoDom() {
     // Going through the todo array to create dom for every element
     todoArr.forEach((todo) => {
 
-        // wrapper for single todos
-        const todoDiv = document.createElement("div");
-        todoDiv.className = "todoDiv";
-        todoDiv.id = "x" + count++; //This gives every todo div the index of its og object
+        if (todo.Project == getProjectSelectionStatus()) {
 
-        // Wrapper For Date And TodoButton [For Styling]
-        const dateBtnWrapper = document.createElement("div");
-        dateBtnWrapper.className = "dateBtnWrapper";
+            // wrapper for single todos
+            const todoDiv = document.createElement("div");
+            todoDiv.className = "todoDiv";
+            todoDiv.id = "x" + count++; //This gives every todo div the index of its og object
 
-        // Wrapper For Title And Description [For Styling]
-        const titleDesWrapper = document.createElement("div");
-        titleDesWrapper.className = "titleDesWrapper";
+            // Wrapper For Date And TodoButton [For Styling]
+            const dateBtnWrapper = document.createElement("div");
+            dateBtnWrapper.className = "dateBtnWrapper";
+
+            // Wrapper For Title And Description [For Styling]
+            const titleDesWrapper = document.createElement("div");
+            titleDesWrapper.className = "titleDesWrapper";
 
 
-        // going through the single todo object to create dom for all the properties
-        for (const type in todo) {
+            // going through the single todo object to create dom for all the properties
+            for (const type in todo) {
 
-            if (type == "Title" || type == "Description" || type == "DueDate") {
-                const typeDiv = document.createElement("div");
-                typeDiv.className = type;
-                typeDiv.textContent = todo[type];
+                if (type == "Title" || type == "Description" || type == "DueDate") {
+                    const typeDiv = document.createElement("div");
+                    typeDiv.className = type;
+                    typeDiv.textContent = todo[type];
 
-                if (type == "DueDate")
-                    dateBtnWrapper.appendChild(typeDiv);
-                else
-                    titleDesWrapper.appendChild(typeDiv);
+                    if (type == "DueDate")
+                        dateBtnWrapper.appendChild(typeDiv);
+                    else
+                        titleDesWrapper.appendChild(typeDiv);
+                }
             }
+
+            // creatin a wrapper for buttons
+            const todoBtnWrapper = document.createElement("div");
+            todoBtnWrapper.className = "todoBtnWrapper";
+
+            // Creating and appending the edit button
+            const editBtn = document.createElement("button");
+            editBtn.className = "editBtn";
+            editBtn.textContent = "Edit";
+            todoBtnWrapper.appendChild(editBtn);
+
+            // Creating and appending the remove Button
+            const rmBtn = document.createElement("button");
+            rmBtn.className = "rmBtn";
+            rmBtn.textContent = "X";
+            todoBtnWrapper.appendChild(rmBtn);
+
+            // Appending buttons 
+            dateBtnWrapper.appendChild(todoBtnWrapper);
+
+            todoDiv.appendChild(titleDesWrapper);
+            todoDiv.appendChild(dateBtnWrapper);
+
+
+            // Appending everything to a wrapper
+            todosWrapper.appendChild(todoDiv);
         }
-
-        // creatin a wrapper for buttons
-        const todoBtnWrapper = document.createElement("div");
-        todoBtnWrapper.className = "todoBtnWrapper";
-
-        // Creating and appending the edit button
-        const editBtn = document.createElement("button");
-        editBtn.className = "editBtn";
-        editBtn.textContent = "Edit";
-        todoBtnWrapper.appendChild(editBtn);
-
-        // Creating and appending the remove Button
-        const rmBtn = document.createElement("button");
-        rmBtn.className = "rmBtn";
-        rmBtn.textContent = "X";
-        todoBtnWrapper.appendChild(rmBtn);
-
-        // Appending buttons 
-        dateBtnWrapper.appendChild(todoBtnWrapper);
-
-        todoDiv.appendChild(titleDesWrapper);
-        todoDiv.appendChild(dateBtnWrapper);
-
-
-        // Appending everything to a wrapper
-        todosWrapper.appendChild(todoDiv);
     });
 }
 

@@ -1,76 +1,28 @@
 
 let todos = [
     {
-        Title: "Go to the efgfbgsdfe",
+        Title: "Default",
         Description: "lorem ipsum bhosda",
         DueDate: "22-02-20",
         Priority: 1,
         Status: false,
-        Project: "default"
+        Project: "Default"
     },
     {
-        Title: "Linkedin Post",
-        Description: "IDEA Heckathon linkedin post",
-        DueDate: "17-05-25",
-        Priority: 1,
-        Status: false,
-        Project: "default"
-    },
-    {
-        Title: "DSA",
-        Description: "DSA Karle bhai varna job nahi milega",
+        Title: "Project 1",
+        Description: "lorem ipsum bhosda",
         DueDate: "22-02-20",
         Priority: 1,
         Status: false,
-        Project: "default"
+        Project: "Ruchik"
     },
     {
-        Title: "Linkedin Post",
-        Description: "IDEA Heckathon linkedin post",
-        DueDate: "2017-05-25",
-        Priority: 1,
-        Status: false,
-        Project: "default"
-    },
-    {
-        Title: "DSA",
-        Description: "DSA Karle bhai varna job nahi milega",
+        Title: "Ruchik",
+        Description: "lorem ipsum bhosda",
         DueDate: "22-02-20",
         Priority: 1,
         Status: false,
-        Project: "default"
-    },
-    {
-        Title: "Linkedin Post",
-        Description: "IDEA Heckathon linkedin post",
-        DueDate: "17-05-25",
-        Priority: 1,
-        Status: false,
-        Project: "default"
-    },
-    {
-        Title: "DSA",
-        Description: "DSA Karle bhai varna job nahi milega",
-        DueDate: "22-02-20",
-        Priority: 1,
-        Status: false,
-        Project: "default"
-    },
-    {
-        Title: "Linkedin Post",
-        Description: "IDEA Heckathon linkedin post",
-        DueDate: "17-05-25",
-        Priority: 1,
-        Status: false,
-        Project: "default"
-    },
-    {
-        Title: "DSA",
-        Description: "DSA Karle bhai varna job nahi milega",
-        DueDate: "22-02-20",
-        Priority: 1,
-        Status: false,
-        Project: "default"
+        Project: "Default"
     }
 ]
 

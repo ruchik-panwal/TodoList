@@ -1,5 +1,7 @@
-import { newProjectBtn, newProjectFormDom } from "./domCreator";
-import { getProjectSelectionStatus ,setProjectSelectionStatus } from "./todos";
+import { newProjectBtn, newProjectFormDom, todoDom } from "./domCreator";
+import { getProjectSelectionStatus, setProjectSelectionStatus } from "./todos";
+import { removeTodo, editTodo } from "./editTodo";
+import { editButton } from "./editControl";
 
 // Calls the DomCreator for ProjectForm
 function newProject() {
@@ -52,6 +54,11 @@ function projectSelection() {
             projectBtns.forEach((e) => { e.id = ""; }); // Changes id to blank to keep default css
             btn.id = "selectedProject"; // Changes id for special css
             setProjectSelectionStatus(btn.textContent); // Changes global status for keeeping track 
+
+            // Reloading shit
+            todoDom();
+            removeTodo();
+            editButton();
         });
 
     });
