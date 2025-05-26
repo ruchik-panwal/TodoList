@@ -1,6 +1,5 @@
-
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
-
+let projectList = JSON.parse(localStorage.getItem("projectList")) || [];
 
 let forminputs = [
     {
@@ -35,16 +34,20 @@ function todolist() {
     return todos;
 }
 
-function formInput(){
+function getProjectList() {
+    return projectList;
+}
+
+function formInput() {
     return forminputs;
 }
 
-function setProjectSelectionStatus(val){
-        projectStatus = val;
+function setProjectSelectionStatus(val) {
+    projectStatus = val;
 }
 
-function getProjectSelectionStatus(){
-    return projectStatus ;
+function getProjectSelectionStatus() {
+    return projectStatus;
 }
 
-export  {todolist,formInput, getProjectSelectionStatus, setProjectSelectionStatus};
+export { todolist, formInput, getProjectSelectionStatus, setProjectSelectionStatus, getProjectList };
