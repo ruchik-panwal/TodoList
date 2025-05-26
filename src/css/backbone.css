@@ -1,70 +1,73 @@
 /* Main Body */
 
-body{
-    background-color: whitesmoke;
-    font-family: 'Roboto';
-    box-sizing: border-box;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+body {
+  background-color: whitesmoke;
+  font-family: "Roboto";
+  box-sizing: border-box;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
-button:hover{
-    cursor: pointer;  /* For all the buttons in the site */
+button:hover {
+  cursor: pointer; /* For all the buttons in the site */
+}
+.projectButton:hover {
+  cursor: pointer;
 }
 
 /* CSS For the Main holder for all the TODO-Feature */
-.mainWrapper{
-    display: grid;
-    gap: 10px;
-    padding: 50px 30px;
-    border-radius: 35px;
-    grid-template-columns: minmax(50px , 300px) 1fr;
-    grid-template-rows: 70px 1fr;
+.mainWrapper {
+  display: grid;
+  gap: 10px;
+  padding: 50px 30px;
+  border-radius: 35px;
+  grid-template-columns: minmax(50px, 300px) 1fr;
+  grid-template-rows: 70px 1fr;
 
-    background-color: var(--main-bgm);
+  background-color: var(--main-bgm);
 }
 
 /* All the Wrapper for TODO Features */
 .controlsWrapper,
 .projectsWrapper,
-.todosWrapper{
-    background-color: var(--accent-color);
-    border-radius: 30px;
-    box-sizing: border-box;
+.todosWrapper {
+  background-color: var(--accent-color);
+  border-radius: 30px;
+  box-sizing: border-box;
 }
 
 /* The TODO Control Panel */
-.controlsWrapper{
-    height: 70px;
-    width: 100%;
-    padding: 0 30px;
+.controlsWrapper {
+  height: 70px;
+  width: 100%;
+  padding: 0 30px;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 /* The Project Panel */
-.projectsWrapper{
-    height: 100%;
-    width: 100%;
-    padding: 30px ;
+.projectsWrapper {
+  height: 100%;
+  width: 100%;
+  padding: 30px;
 
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 
-    grid-area: 1 / 1 / 3 / 1;
+  grid-area: 1 / 1 / 3 / 1;
 }
 
 /* The TODO Viewer */
-.todosWrapper{
-    box-sizing: border-box;
-    padding: 20px;
-    width: 100%;
+.todosWrapper {
+  box-sizing: border-box;
+  padding: 20px;
+  width: 100%;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
-    grid-template-rows: repeat(auto-fit, 300px);
-    gap: 20px;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit, 300px);
+  gap: 20px;
+  justify-items: center;
 }

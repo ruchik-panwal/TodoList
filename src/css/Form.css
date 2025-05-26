@@ -1,95 +1,97 @@
 /* For All the Forms */
 
 .holder {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background: var(--holder-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: var(--holder-color);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .creatorForm,
 .editorForm,
 .projectFormDom {
-    height: auto;
-    width: 50vw;
-    max-width: 500px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: var(--main-bgm);
-    font-family: "Inter";
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  height: auto;
+  width: 50vw;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--main-bgm);
+  font-family: "Inter";
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .inputWrapper,
 .projectForminputWrapper {
-    padding: 5px;
-    color: var(--text-white);
-    width: 100%;
+  padding: 5px;
+  color: var(--text-white);
+  width: 100%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 5px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 .inputWrapper input,
 .projectForminputWrapper input {
+  width: 100%;
+  max-width: 500px;
+  border-style: none;
+  height: 40px;
+  background-color: var(--input-bgm);
+  box-sizing: border-box;
+  padding: 0 20px;
+  color: var(--text-white);
 
-    width: 100%;
-    max-width: 500px;
-    border-style: none;
-    height: 40px;
-    background-color: var(--input-bgm);
-    box-sizing: border-box;
-    padding: 0 20px;
-    color: var(--text-white);
-
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 .creatorForm button,
 .editorForm button,
 .projectFormBtnWrapper button {
-    width: 100%;
-    max-width: 500px;
-    height: 40px;
-    border-style: none;
-    font-size: 1rem;
-    border-radius: 5px;
+  width: 100%;
+  max-width: 500px;
+  height: 40px;
+  border-style: none;
+  font-size: 1rem;
+  border-radius: 5px;
 }
 
 .createBtn,
 .formEditBtn,
-.projectFormSubmitBtn{
-    background-color: var(--green-Btn);
-    color: var(--text-white);
+.projectFormSubmitBtn {
+  background-color: var(--green-Btn);
+  color: var(--text-white);
 }
 
-.projectFormBtnWrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.projectFormBtnWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    gap: 20px;
-    width: 100%;
+  gap: 20px;
+  width: 100%;
 }
 
-.projectFormBtnWrapper button{
-    width: 100%;
-    height: 30px;
+.projectFormBtnWrapper button {
+  width: 100%;
+  height: 30px;
 }
