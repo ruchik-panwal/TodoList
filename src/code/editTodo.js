@@ -5,13 +5,14 @@ import { editButton } from "./editControl";
 function removeTodo() {
 
     const rmBtn = document.querySelectorAll(".rmBtn");
-    let todoArr = todolist();
+    let todos = todolist();
 
     rmBtn.forEach((rm) => {
 
         rm.addEventListener("click", () => {
             const index = parseInt(rm.parentElement.parentElement.parentElement.id.slice(1)); //takes integer from the id
-            todoArr.splice(index, 1); // Removing the object 
+            todos.splice(index, 1); // Removing the object 
+            localStorage.setItem("todos", JSON.stringify(todos));
             todoDom(); // Create New dom for the changed array
             removeTodo(); // assigns event listener to thr new Dom
             editButton(); //assign event listerner 
@@ -37,7 +38,7 @@ function createTodo() {
     };
 
     // storing array reference to this variable
-    let todoArr = todolist();
+    let todos = todolist();
 
     // Doing things when Clicked
     createBtn.addEventListener('click', (e) => {
@@ -55,8 +56,10 @@ function createTodo() {
 
         tempObj.Project = getProjectSelectionStatus();
 
-        todoArr.push(tempObj); //Pushing the Object in the array
+        todos.push(tempObj); //Pushing the Object in the array
 
+        localStorage.setItem("todos", JSON.stringify(todos));
+        
         // re-rendering
         todoDom();
         createTodo();
@@ -88,21 +91,22 @@ function editTodo(ind){
     const formEditBtn = document.querySelector(".formEditBtn"); //Selecting Edit Button
     const inputs = document.querySelectorAll("input"); //Selecting input fields
 
-    const todoArr = todolist();
+    const todos = todolist();
 
     formEditBtn.addEventListener('click', (e) => {
         e.preventDefault();
     
         // Going through tempObj to update properties 
-        for (const element in todoArr[ind]) {
+        for (const element in todos[ind]) {
 
             // going through every input
             inputs.forEach((input) => {
-                if (element == input.id) todoArr[ind][element] = input.value; //ex if(Title == Title) array[Title] = inputValue
+                if (element == input.id) todos[ind][element] = input.value; //ex if(Title == Title) array[Title] = inputValue
             });
         }
 
         // Reloading shit
+        localStorage.setItem("todos", JSON.stringify(todos));
         todoDom();
         removeTodo();
         editTodo(0);
