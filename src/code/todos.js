@@ -1,30 +1,6 @@
 
-let todos = [
-    {
-        Title: "Default",
-        Description: "lorem ipsum bhosda",
-        DueDate: "22-02-20",
-        Priority: 1,
-        Status: false,
-        Project: "Default"
-    },
-    {
-        Title: "Project 1",
-        Description: "lorem ipsum bhosda",
-        DueDate: "22-02-20",
-        Priority: 1,
-        Status: false,
-        Project: "Ruchik"
-    },
-    {
-        Title: "Ruchik",
-        Description: "lorem ipsum bhosda",
-        DueDate: "22-02-20",
-        Priority: 1,
-        Status: false,
-        Project: "Default"
-    }
-]
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
+
 
 let forminputs = [
     {
