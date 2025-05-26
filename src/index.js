@@ -1,7 +1,7 @@
 import { todoDom, createNewBtn, defProjectBtn, backBone, header, footer} from "./code/domCreator";
 import { removeTodo } from "./code/editTodo";
 import { newButton, editButton } from "./code/editControl";
-import { newProject, projectSelection } from "./code/projectSystem";
+import { newProject, projectSelection, localProject } from "./code/projectSystem";
 
 
 import "./css/colors.css";
@@ -15,6 +15,7 @@ import "./css/headerFooter.css"
 header();
 backBone();
 defProjectBtn();
+localProject();
 newProject();
 projectSelection();
 createNewBtn();
