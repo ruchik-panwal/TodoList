@@ -1,7 +1,19 @@
 import { newProjectBtn, newProjectFormDom, todoDom } from "./domCreator";
-import { getProjectSelectionStatus, setProjectSelectionStatus } from "./todos";
+import { getProjectSelectionStatus, setProjectSelectionStatus, getProjectList } from "./todos";
 import { removeTodo, editTodo } from "./editTodo";
 import { editButton } from "./editControl";
+
+// Adding existing projects from localstorage
+function localProject() {
+
+    let projectList = getProjectList();
+
+    if (projectList) {
+        projectList.forEach((project) => {
+            newProjectBtn(project);
+        });
+    }
+}
 
 // Calls the DomCreator for ProjectForm
 function newProject() {
@@ -21,10 +33,21 @@ function projectForm() {
     // Selecting Done Button and Form Input
     const projectSubmitBtn = document.querySelector(".projectFormSubmitBtn");
     const projectFormInput = document.querySelector("#projectFormInput");
+    let projectList = getProjectList();
 
     projectSubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        projectFormInput.value ? newProjectBtn(projectFormInput.value) : newProjectBtn(projectFormInput.placeholder); //If input has value then seend it else keep the placeholder as name 
+
+        //If input has value then seend it else keep the placeholder as name 
+        if (projectFormInput.value) {
+            newProjectBtn(projectFormInput.value);
+            projectList.push(projectFormInput.value);
+        } else {
+            newProjectBtn(projectFormInput.placeholder);
+            projectList.push(projectFormInput.placeholder);
+        }
+
+        localStorage.setItem("projectList", JSON.stringify(projectList));
         projectCancelBtn.parentElement.parentElement.parentElement.remove(); //Cancelling
 
         projectSelection(); //rendering
@@ -65,4 +88,4 @@ function projectSelection() {
 
 }
 
-export { newProject, projectForm, projectSelection };
+export { newProject, projectForm, projectSelection, localProject };
