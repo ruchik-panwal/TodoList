@@ -1,13 +1,14 @@
 import { creatorFormDom, editFormDom } from "./domCreator";
 import { createTodo, cancelTodo, editTodo } from "./editTodo";
 
+// Calls a form for inputing new todo
 function newButton() {
   const newBtn = document.querySelector(".newTodoBtn");
 
   newBtn.addEventListener("click", () => {
-    creatorFormDom();
-    createTodo();
-    cancelTodo();
+    creatorFormDom(); //Creates form
+    createTodo(); //create button
+    cancelTodo(); //cancel button
   });
 }
 
@@ -17,7 +18,7 @@ function editButton() {
   editBtn.forEach((editBtn) => {
     editBtn.addEventListener("click", () => {
       const index = parseInt(
-        editBtn.parentElement.parentElement.parentElement.id.slice(1),
+        editBtn.parentElement.parentElement.parentElement.id.slice(1)
       ); //index number of the selected todo
       editFormDom(index); //Creating DOM for the Form
       editTodo(index); // assigning properties
