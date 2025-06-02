@@ -2,6 +2,7 @@ import { newProjectBtn, newProjectFormDom, todoDom } from "./domCreator";
 import { setProjectSelectionStatus, getProjectList } from "./todos";
 import { removeTodo } from "./editTodo";
 import { editButton } from "./editControl";
+import projectCancelBtnShowUp from "./animation";
 
 // Adding existing projects from localstorage
 function localProject() {
@@ -22,6 +23,7 @@ function localProject() {
   }
 
   removeProject();
+  projectCancelBtnShowUp();
 }
 
 // Calls the DomCreator for ProjectForm
