@@ -7,19 +7,30 @@ import { editButton } from "./editControl";
 function localProject() {
   let projectList = getProjectList();
 
-  if (projectList) {
-    projectList.forEach((project) => {
-      newProjectBtn(project);
+  const np = document.querySelectorAll(".newProjectBtnWrap");
+
+  if(np){
+    np.forEach((np) => {
+      np.remove();
     });
   }
+
+  if (projectList) {
+    projectList.forEach((project, index) => {
+      newProjectBtn(project, index);
+    });
+  }
+
+  removeProject();
 }
 
 // Calls the DomCreator for ProjectForm
 function newProject() {
   const newProBtn = document.querySelector(".newProjectBtn"); //selecting Button
+  let projectList = getProjectList();
 
   newProBtn.addEventListener("click", () => {
-    newProjectFormDom(); //Calling Dom Creator
+    newProjectFormDom(projectList.length + 1); //Calling Dom Creator
     projectForm(); //rendering
   });
 }
@@ -46,7 +57,9 @@ function projectForm() {
     localStorage.setItem("projectList", JSON.stringify(projectList));
     projectCancelBtn.parentElement.parentElement.parentElement.remove(); //Cancelling
 
+    localProject();
     projectSelection(); //rendering
+
   });
 
   const projectCancelBtn = document.querySelector(".projectFormCancelBtn"); //Selecting Cancel Button
@@ -55,6 +68,7 @@ function projectForm() {
     e.preventDefault();
     projectCancelBtn.parentElement.parentElement.parentElement.remove(); //Cancelling
 
+    localProject();
     projectSelection(); //rendering
   });
 }
@@ -79,20 +93,26 @@ function projectSelection() {
   });
 }
 
-// // Editing the project
-// function editProject(){
 
-//     const editBtn = document.querySelectorAll(".projectEditButton");
+function removeProject() {
+  const cancelBtn = document.querySelectorAll(".projectCancelBtn");
+  let projectList = getProjectList();
 
-//     editBtn.forEach((editBtn) => {
-//         editBtn.addEventListener('click', () => {
-//             const index = parseInt(editBtn.parentElement.parentElement.parentElement.id.slice(1)); //index number of the selected todo
-//             editFormDom(index); //Creating DOM for the Form
-//             editTodo(index); // assigning properties
-//             cancelTodo(); // assigning properties
-//         });
-//     });
+  cancelBtn.forEach((cancel) => {
+    cancel.addEventListener("click", () => {
+      const index = parseInt(cancel.id.slice(1)); //takes integer from the id
+      projectList.splice(index, 1); // Removing the object
+      localStorage.setItem("projectList", JSON.stringify(projectList));
 
-// }
+      localProject();
+    });
+  });
+}
 
-export { newProject, projectForm, projectSelection, localProject };
+export {
+  newProject,
+  projectForm,
+  projectSelection,
+  localProject,
+  removeProject,
+};
