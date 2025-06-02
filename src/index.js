@@ -6,8 +6,10 @@ import {
   header,
   footer,
 } from "./code/domCreator";
+
 import { removeTodo } from "./code/editTodo";
 import { newButton, editButton } from "./code/editControl";
+
 import {
   newProject,
   projectSelection,
