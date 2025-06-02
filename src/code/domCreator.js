@@ -207,7 +207,7 @@ function createNewBtn() {
   // A new Button which enables to create new Todo
   const newBtn = document.createElement("button");
   newBtn.className = "newTodoBtn";
-  newBtn.textContent = "NEW";
+  newBtn.textContent = "NEW TODO";
 
   // Append
   controlsWrapper.appendChild(newBtn);
