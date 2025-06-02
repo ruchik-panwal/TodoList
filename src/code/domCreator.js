@@ -121,7 +121,7 @@ function defProjectBtn() {
 }
 
 // Creates new project after form subbmit
-function newProjectBtn(name) {
+function newProjectBtn(name, index) {
   const newProjectBtnWrap = document.createElement("div");
   newProjectBtnWrap.className = "newProjectBtnWrap";
 
@@ -134,16 +134,11 @@ function newProjectBtn(name) {
   const projectEditBtnsWrapper = document.createElement("div");
   projectEditBtnsWrapper.className = "projectEditBtnsWrapper";
 
-  // Creating edit Buttons
-  const editBtn = document.createElement("button");
-  editBtn.className = "projectEditButton";
-  editBtn.textContent = "Edit";
-  projectEditBtnsWrapper.appendChild(editBtn);
-
   // Creating Cancel Button
   const cancelBtn = document.createElement("button");
   cancelBtn.className = "projectCancelBtn";
   cancelBtn.textContent = "X";
+  cancelBtn.id = "x" + index;
   projectEditBtnsWrapper.appendChild(cancelBtn);
 
   // Appending
@@ -154,7 +149,7 @@ function newProjectBtn(name) {
 }
 
 // Creates DOM For form of newProject
-function newProjectFormDom() {
+function newProjectFormDom(ind) {
   // Creating Form
   const projectFormDom = document.createElement("form");
   projectFormDom.className = "projectFormDom";
@@ -163,7 +158,7 @@ function newProjectFormDom() {
   const projectFormInput = document.createElement("input");
   projectFormInput.type = "text";
   projectFormInput.id = "projectFormInput";
-  projectFormInput.placeholder = "Project 1";
+  projectFormInput.placeholder = "Project " + ind ;
 
   // Label For Projeect Input Name
   const projectFormLabel = document.createElement("label");
